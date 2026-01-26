@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+
+                    <h1 class="fw-bold text-primary mb-1">
+                        Edit Employee
+                    </h1>
+                    <p class="text-muted fs-4 mb-5">
+                        Update Employee Information
+                    </p>
+
+                    <form action="/edit/<%= employee.id %>" method="POST">
+
+                        <div class="mb-4">
+                            <label class="form-label fs-4">Full Name</label>
+                            <input type="text" name="full_name"
+                                   class="form-control form-control-lg fs-4"
+                                   value="<%= employee.full_name %>" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fs-4">Division</label>
+                            <input type="text" name="division"
+                                   class="form-control form-control-lg fs-4"
+                                   value="<%= employee.division %>" required>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fs-4">Salary</label>
+                                <input type="number" name="salary"
+                                       class="form-control form-control-lg fs-4"
+                                       value="<%= employee.salary %>" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fs-4">Leave Balance</label>
+                                <input type="number" name="leave_balance"
+                                       class="form-control form-control-lg fs-4"
+                                       value="<%= employee.leave_balance %>" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fs-4">Minimum Leave Alert</label>
+                                <input type="number" name="min_leave"
+                                       class="form-control form-control-lg fs-4"
+                                       value="<%= employee.min_leave %>" required>
+                            </div>
+                            <div class="col-md-6 mb-4">
+                                <label class="form-label fs-4">Notes</label>
+                                <input type="text" name="notes"
+                                       class="form-control form-control-lg fs-4"
+                                       value="<%= employee.notes %>">
+                            </div>
+                        </div>
+
+                        <div class="d-flex gap-4 mt-5">
+                            <button type="submit"
+                                    class="btn btn-primary btn-lg w-100 fs-4 py-3">
+                                Save Changes
+                            </button>
+                            <a href="/"
+                               class="btn btn-outline-secondary btn-lg w-100 fs-4 py-3">
+                                Cancel
+                            </a>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
